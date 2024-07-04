@@ -1,26 +1,31 @@
 import React from "react";
 
-import { SidebarItem } from "./components";
+import {
+  InfoOutlined as InfoIcon,
+  Close as CloseIcon,
+} from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+
+import { BorderLinearProgress } from "@/components/Base";
 
 /**
  * @param children Children content to be displayed inside the main template
  */
 const MainTemplate: React.FC<ChildrenProps> = ({ children }) => (
   <div className="flex h-screen">
-    <div className="bg-white w-[281px] h-full shadow-md fixed">
-      <div className="p-4">
-        <div className="text-[18px] font-bold mb-4">Sidebar</div>
-        <SidebarItem icon="dashboard">Dashboard</SidebarItem>
-        <SidebarItem icon="overview">Overview</SidebarItem>
+    <div className="flex flex-col ml-auto w-full">
+      <div className="bg-primary px-6 h-16 shadow-md flex gap-3 items-center">
+        <IconButton size="large">
+          <CloseIcon fontSize="large" />
+        </IconButton>
+        <BorderLinearProgress />
+        <IconButton size="large">
+          <InfoIcon fontSize="large" />
+        </IconButton>
       </div>
-    </div>
-    <div className="flex flex-col ml-auto w-[calc(100%-281px)]">
-      <div className="bg-white p-4 shadow-md sha">
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl font-semibold text-[18px]">Navbar</h1>
-        </div>
+      <div className="p-8">
+        <div>{children}</div>
       </div>
-      <div className="p-8">{children}</div>
     </div>
   </div>
 );

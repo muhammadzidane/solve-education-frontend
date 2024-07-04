@@ -57,7 +57,7 @@ const config: Config = {
         "gray-1": "#E0E0E0",
         "gray-2": "#828282",
         "gray-3": "#BDBDBD",
-        primary: "#222831",
+        primary: "#FFD018",
         warning: "#E5A443",
         danger: "#EB5757",
       },

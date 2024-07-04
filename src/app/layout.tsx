@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Inter } from "next/font/google";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CustomSWRConfig>
-          <NextAuthProvider>{children}</NextAuthProvider>
-        </CustomSWRConfig>
+        <AppRouterCacheProvider>
+          <CustomSWRConfig>
+            <NextAuthProvider>{children}</NextAuthProvider>
+          </CustomSWRConfig>
+        </AppRouterCacheProvider>
         <Toast />
       </body>
     </html>
