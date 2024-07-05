@@ -9,7 +9,13 @@ const BorderLinearProgress: React.FC<LinearProgressProps> = ({
   return (
     <Box sx={{ width: "100%" }}>
       <LinearProgress
-        sx={{ borderRadius: 6, height: 10 }}
+        sx={{
+          ".MuiLinearProgress-bar": {
+            borderRadius: 10,
+          },
+          borderRadius: 10,
+          height: 20,
+        }}
         variant="determinate"
         value={value}
         {...rest}

@@ -1,5 +1,5 @@
-/* Tailwind */
-@tailwind base;
+/* Tailwind CSS */
+/* @tailwind base */ /* ! Replaced with CssBaseline */
 @tailwind components;
 @tailwind utilities;
 

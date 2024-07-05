@@ -1,4 +1,6 @@
 export { default as BorderLinearProgress } from "./BorderLinearProgress";
+export { default as QuestionContent } from "./QuestionContent";
+export { default as DicreteSlider } from "./DicreteSlider";
 export { default as DatePicker } from "./DatePicker";
 export { default as InputGroup } from "./InputGroup";
 export { default as CheckBox } from "./Checkbox";

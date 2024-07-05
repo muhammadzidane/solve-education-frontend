@@ -1,7 +1,13 @@
 import React from "react";
 
+import { QuestionContent } from "@/components";
+
 const DashboardDetail = () => {
-  return <div>DashboardDetail</div>;
+  return (
+    <div>
+      <QuestionContent />
+    </div>
+  );
 };
 
 export default DashboardDetail;

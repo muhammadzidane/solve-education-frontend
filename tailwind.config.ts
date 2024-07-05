@@ -46,7 +46,7 @@ const config: Config = {
         },
       },
       colors: {
-        "light-blue-1": "#EEDCFF",
+        "light-blue-1": "#D0E0F9",
         "purple-1": "#9B51E0",
         "yellow-1": "#f8b76b",
         "white-1": "#FFFFFF",
@@ -79,6 +79,9 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  corePlugins: {
+    preflight: false,
+  },
   plugins: [],
 };
 export default config;
