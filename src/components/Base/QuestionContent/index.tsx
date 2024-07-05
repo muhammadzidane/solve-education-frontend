@@ -7,7 +7,7 @@ import { Typography, Container, Paper } from "@mui/material";
 
 import DicreteSlider from "../DicreteSlider";
 
-const QuestionContent: React.FC = () => {
+const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
   const [contentFontSize, setContentFontSize] = useState<number>(16);
 
   const onChangeSlider = (event: Event) => {
@@ -31,10 +31,11 @@ const QuestionContent: React.FC = () => {
     <div>
       <div className="bg-light-blue-1 h-[144px] pt-4">
         <Container maxWidth="lg">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <FontDownloadOutlined fontSize="small" />
             <DicreteSlider
               onChange={onChangeSlider}
+              color="secondary"
               defaultValue={0}
               step={1}
               min={0}
@@ -44,8 +45,8 @@ const QuestionContent: React.FC = () => {
           </div>
         </Container>
       </div>
-      <Paper className="h-[100px] p-3 mx-16 relative -top-16 !rounded-xl">
-        <Typography fontSize={contentFontSize}>Blablabla</Typography>
+      <Paper className="h-[100px] p-3 mx-20 relative -top-16 !rounded-xl !border-t-[3px] !border-secondary">
+        <Typography fontSize={contentFontSize}>{text}</Typography>
       </Paper>
     </div>
   );

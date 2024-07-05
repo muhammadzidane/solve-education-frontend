@@ -1,6 +1,13 @@
+"use client";
+
 import React from "react";
 
-import { LinearProgressProps, LinearProgress, Box } from "@mui/material";
+import {
+  linearProgressClasses,
+  LinearProgressProps,
+  LinearProgress,
+  Box,
+} from "@mui/material";
 
 const BorderLinearProgress: React.FC<LinearProgressProps> = ({
   value = 20,
@@ -10,13 +17,15 @@ const BorderLinearProgress: React.FC<LinearProgressProps> = ({
     <Box sx={{ width: "100%" }}>
       <LinearProgress
         sx={{
-          ".MuiLinearProgress-bar": {
+          [`& .${linearProgressClasses.bar}`]: {
             borderRadius: 10,
           },
           borderRadius: 10,
           height: 20,
         }}
+        className="!bg-white-2"
         variant="determinate"
+        color="success"
         value={value}
         {...rest}
       />

@@ -11,10 +11,10 @@ import { BorderLinearProgress } from "@/components/Base";
 /**
  * @param children Children content to be displayed inside the main template
  */
-const MainTemplate: React.FC<ChildrenProps> = ({ children }) => (
+const DashboardDetailLayout: React.FC<ChildrenProps> = ({ children }) => (
   <div className="flex h-screen">
     <div className="flex flex-col ml-auto w-full">
-      <div className="bg-primary px-6 h-16 shadow-md flex items-center">
+      <div className="bg-primary px-6 h-16 shadow-bold mb-[0.025rem] flex items-center">
         <IconButton size="large">
           <CloseIcon fontSize="large" />
         </IconButton>
@@ -28,4 +28,4 @@ const MainTemplate: React.FC<ChildrenProps> = ({ children }) => (
   </div>
 );
 
-export default MainTemplate;
+export default DashboardDetailLayout;

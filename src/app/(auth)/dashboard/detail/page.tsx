@@ -5,7 +5,7 @@ import { QuestionContent } from "@/components";
 const DashboardDetail = () => {
   return (
     <div>
-      <QuestionContent />
+      <QuestionContent text="wkwkwk" />
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { MainLayout } from "@/components";
+import { DashboardDetailLayout } from "@/components";
 
 const Layout: React.FC<ChildrenProps> = ({ children }) => (
-  <MainLayout>{children}</MainLayout>
+  <DashboardDetailLayout>{children}</DashboardDetailLayout>
 );
 
 export default Layout;
