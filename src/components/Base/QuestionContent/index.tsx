@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 
 import { FontDownloadOutlined } from "@mui/icons-material";
-import { Typography, Container, Paper } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 
 import DicreteSlider from "../DicreteSlider";
+import Paper from "../Paper";
 
 const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
   const [contentFontSize, setContentFontSize] = useState<number>(16);
@@ -16,13 +17,13 @@ const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
 
     switch (value) {
       case 0:
-        setContentFontSize(16);
+        setContentFontSize(14);
         break;
       case 1:
-        setContentFontSize(20);
+        setContentFontSize(18);
         break;
       case 2:
-        setContentFontSize(24);
+        setContentFontSize(22);
         break;
     }
   };
@@ -45,7 +46,7 @@ const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
           </div>
         </Container>
       </div>
-      <Paper className="h-[100px] p-3 mx-20 relative -top-16 !rounded-xl !border-t-[3px] !border-secondary">
+      <Paper className="min-h-[100px]">
         <Typography fontSize={contentFontSize}>{text}</Typography>
       </Paper>
     </div>

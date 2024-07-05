@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  InfoOutlined as InfoIcon,
-  Close as CloseIcon,
-} from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-
-import { BorderLinearProgress } from "@/components/Base";
+import { Footer, Navbar } from "./components";
 
 /**
  * @param children Children content to be displayed inside the main template
@@ -14,16 +8,9 @@ import { BorderLinearProgress } from "@/components/Base";
 const DashboardDetailLayout: React.FC<ChildrenProps> = ({ children }) => (
   <div className="flex h-screen">
     <div className="flex flex-col ml-auto w-full">
-      <div className="bg-primary px-6 h-16 shadow-bold mb-[0.025rem] flex items-center">
-        <IconButton size="large">
-          <CloseIcon fontSize="large" />
-        </IconButton>
-        <BorderLinearProgress />
-        <IconButton className="ml-2">
-          <InfoIcon />
-        </IconButton>
-      </div>
+      <Navbar />
       <div>{children}</div>
+      <Footer />
     </div>
   </div>
 );

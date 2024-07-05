@@ -15,4 +15,7 @@ export { default as Dialog } from "./Dialog";
 export { default as Input } from "./Input";
 export { default as Toast } from "./Toast";
 export { default as Table } from "./Table";
+export { default as Paper } from "./Paper";
 export { default as Card } from "./Card";
+export { default as Tabs } from "./Tabs";
+export { default as Tab } from "./Tab";
