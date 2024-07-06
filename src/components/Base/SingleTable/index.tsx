@@ -2,17 +2,19 @@ import React from "react";
 
 import { Typography, Box } from "@mui/material";
 
-const SingleTable: React.FC<SingleTableProps> = ({ title, value }) => {
+const SingleTable: React.FC<SingleTableProps> = ({ title, value, type }) => {
+  const typeColor = `${type}.main`;
+
   return (
     <Box
       sx={{
-        borderColor: "primary.main",
+        borderColor: typeColor,
         borderStyle: "solid",
-        borderWidth: "1px",
+        borderWidth: "2px",
         minWidth: "96px",
       }}
     >
-      <Box bgcolor="primary.main" p="6px">
+      <Box bgcolor={typeColor} p="6px">
         <Typography color="background.paper">{title}</Typography>
       </Box>
       <Typography p="6px">{value}</Typography>

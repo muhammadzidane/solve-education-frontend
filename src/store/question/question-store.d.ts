@@ -1,8 +1,8 @@
 export interface QuestionSlice {
   setQuestionFontSlider: (sliderValue: number) => void;
   setQuestionFontSize: (fontSize: number) => void;
-  setQuestionScore: (score: number) => void;
-  questionAddProgress: () => void;
+  setQuestionProgress: () => void;
+  setQuestionScore: () => void;
   setQuestionTab: () => void;
   questionFontSlider: number;
   resetQuestion: () => void;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container, Stack } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -17,8 +17,13 @@ import { DetailContentProps } from "./detail-content";
 
 const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
   const router = useRouter();
-  const { questionAddProgress, questionProgress, setQuestionTab, questionTab } =
-    useBoundStore();
+  const {
+    setQuestionProgress,
+    questionProgress,
+    setQuestionScore,
+    setQuestionTab,
+    questionTab,
+  } = useBoundStore();
 
   const [showAnswerAlert, setshowAnswerAlert] = useState<boolean>(false);
   const [answerAlertType, setAnswerAlertType] = useState<"success" | "error">(
@@ -35,7 +40,11 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
     const isCorrectAnswer = answer === currentData?.question_data?.answer;
     const answerType = isCorrectAnswer ? "success" : "error";
 
-    questionAddProgress();
+    if (isCorrectAnswer) {
+      setQuestionScore();
+    }
+
+    setQuestionProgress();
     setAnswerAlertType(answerType);
     setshowAnswerAlert(true);
   };
@@ -49,6 +58,12 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
     }
   };
 
+  useEffect(() => {
+    if (questionProgress === 5 && !showAnswerAlert) {
+      router.push("/dashboard/result");
+    }
+  }, [questionProgress, showAnswerAlert, router]);
+
   return (
     <>
       {/* Passage Content */}
@@ -58,7 +73,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
 
       {/* Question Content */}
       {questionTab === 1 && (
-        <div>
+        <>
           <QuestionContent text={currentData?.question_data?.question} />
           <Container sx={{ pt: 2 }} maxWidth="lg">
             {showAnswerAlert ? (
@@ -93,7 +108,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
               </Stack>
             )}
           </Container>
-        </div>
+        </>
       )}
     </>
   );

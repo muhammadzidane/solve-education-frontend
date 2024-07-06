@@ -12,8 +12,8 @@ const ResultContent: React.FC = () => {
 
   return (
     <Box justifyContent="center" display="flex" gap="16px" mt="24px">
-      <SingleTable value={`${questionScore} %`} title="Score" />
-      <SingleTable value={`${questionScore} %`} title="Poin" />
+      <SingleTable value={`${questionScore}%`} type="primary" title="Score" />
+      <SingleTable value={`${questionScore}%`} title="Poin" type="info" />
     </Box>
   );
 };

@@ -17,13 +17,8 @@ export const createQuestionSlice: StateCreator<
   QuestionSlice
 > = (set) => ({
   ...initialState,
-  questionAddProgress: () => {
-    set((state) => {
-      const progressNumber = state.questionProgress + 1;
-      const score = progressNumber * 20;
-
-      return { questionProgress: progressNumber, questionScore: score };
-    });
+  setQuestionProgress: () => {
+    set((state) => ({ questionProgress: state.questionProgress + 1 }));
   },
   setQuestionTab: () => {
     set((state) => ({ questionTab: state.questionTab === 0 ? 1 : 0 }));
@@ -31,11 +26,11 @@ export const createQuestionSlice: StateCreator<
   setQuestionFontSlider: (sliderValue) => {
     set(() => ({ questionFontSlider: sliderValue }));
   },
+  setQuestionScore: () => {
+    set((state) => ({ questionScore: state.questionScore + 20 }));
+  },
   setQuestionFontSize: (fontSize) => {
     set(() => ({ questionFontSize: fontSize }));
-  },
-  setQuestionScore: (score) => {
-    set(() => ({ questionScore: score }));
   },
   resetQuestion: () => {
     set(initialState);

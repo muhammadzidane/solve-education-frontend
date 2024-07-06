@@ -7,15 +7,21 @@ import {
   Close as CloseIcon,
 } from "@mui/icons-material";
 import { IconButton, Typography, Box } from "@mui/material";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { BorderLinearProgress, Modal } from "@/components";
 import { useToggle } from "@/hooks";
 import { useBoundStore } from "@/store";
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
   const { isToggle, onToggle } = useToggle();
-  const { questionProgress } = useBoundStore();
+  const { questionProgress, resetQuestion } = useBoundStore();
+
+  const onRedirectDashboard = () => {
+    resetQuestion();
+    router.push("/dashboard");
+  };
 
   return (
     <Box
@@ -27,18 +33,13 @@ const Navbar: React.FC = () => {
       mb="0.025rem"
       px="24px"
     >
-      <Link href="/dashboard">
-        <IconButton size="large">
-          <CloseIcon fontSize="large" />
-        </IconButton>
-      </Link>
-
+      <IconButton onClick={onRedirectDashboard} size="large">
+        <CloseIcon fontSize="large" />
+      </IconButton>
       <BorderLinearProgress value={questionProgress * 20} />
-
-      <IconButton onClick={onToggle} className="ml-2">
+      <IconButton onClick={onToggle} sx={{ ml: "8px" }}>
         <InfoIcon />
       </IconButton>
-
       <Modal onClose={onToggle} open={isToggle}>
         <Typography>Tap to translate!</Typography>
       </Modal>
