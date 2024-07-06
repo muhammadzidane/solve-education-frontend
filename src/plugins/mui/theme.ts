@@ -8,6 +8,9 @@ export const theme = createTheme({
           textTransform: "capitalize",
           borderRadius: "10px",
         },
+        contained: {
+          color: "#FFFFFF",
+        },
       },
     },
     MuiIconButton: {

@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 const BorderLinearProgress: React.FC<LinearProgressProps> = ({
-  value = 20,
+  value = 0,
   ...rest
 }) => {
   return (

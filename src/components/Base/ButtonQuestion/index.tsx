@@ -6,14 +6,11 @@ const ButtonQuestion: React.FC<ButtonProps> = ({ children, sx, ...rest }) => {
   return (
     <Button
       sx={{
-        color: "background.paper",
         justifyContent: "start",
         borderRadius: 2,
         height: 56,
         ...sx,
       }}
-      variant="outlined"
-      color="secondary"
       fullWidth
       {...rest}
     >

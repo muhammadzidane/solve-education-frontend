@@ -1,13 +1,11 @@
 import { create } from "zustand";
 
-import { createBearSlice } from "./bear";
 import { createQuestionSlice } from "./question";
+import { QuestionSlice } from "./question/question-store";
 import { createToastSlice } from "./toast";
+import { ToastSlice } from "./toast/toast-store";
 
-export const useBoundStore = create<BearSlice & ToastSlice & QuestionSlice>(
-  (...a) => ({
-    ...createBearSlice(...a),
-    ...createToastSlice(...a),
-    ...createQuestionSlice(...a),
-  })
-);
+export const useBoundStore = create<ToastSlice & QuestionSlice>((...a) => ({
+  ...createToastSlice(...a),
+  ...createQuestionSlice(...a),
+}));

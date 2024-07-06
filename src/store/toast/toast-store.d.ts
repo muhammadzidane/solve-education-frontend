@@ -3,7 +3,7 @@ interface OpenToastData {
   title: string;
 }
 
-interface ToastSlice {
+export interface ToastSlice {
   openToast: (data: OpenToastData) => void;
   descriptionToast: string;
   closeToast: () => void;

@@ -2,10 +2,10 @@
 
 import React from "react";
 
-import { Box } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 
 import {
-  QuestionCardAlert,
+  // QuestionCardAlert,
   QuestionContent,
   PassageContent,
   ButtonQuestion,
@@ -13,21 +13,26 @@ import {
 import { useBoundStore } from "@/store";
 
 const DetailContent: React.FC = () => {
-  const { questionTab } = useBoundStore();
+  const { questionAddProgress, questionTab } = useBoundStore();
 
   return (
     <>
-      {questionTab === 0 ? (
+      <Box display={questionTab === 1 ? "none" : "block"}>
         <PassageContent text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi provident assumenda fugit porro laboriosam iste repellat soluta, facere deleniti animi quaerat voluptatem explicabo distinctio quos officiis ipsa voluptate architecto culpa." />
-      ) : (
-        <>
-          <QuestionContent text="Saha aing?" />
-
-          <Box flex={1} px={24} pt={2}>
-            {/* <Stack spacing={1}>
-          <ButtonQuestion>Sad</ButtonQuestion>
-        </Stack> */}
-
+      </Box>
+      <Box display={questionTab === 0 ? "none" : "block"}>
+        <QuestionContent text="Saha aing?" />
+        <Box flex={1} px={24} pt={2}>
+          <Stack spacing={1}>
+            <ButtonQuestion
+              onClick={questionAddProgress}
+              variant="outlined"
+              color="secondary"
+            >
+              Sad
+            </ButtonQuestion>
+          </Stack>
+          {/* 
             <div>
               <ButtonQuestion
                 variant="contained"
@@ -37,10 +42,9 @@ const DetailContent: React.FC = () => {
                 Bored
               </ButtonQuestion>
               <QuestionCardAlert title="Learn from mistakes!" type="error" />
-            </div>
-          </Box>
-        </>
-      )}
+            </div> */}
+        </Box>
+      </Box>
     </>
   );
 };

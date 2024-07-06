@@ -1,5 +1,7 @@
 import { type StateCreator } from "zustand";
 
+import { ToastSlice } from "./toast-store";
+
 const initialState = {
   descriptionToast: "Description",
   titleToast: "Title",
