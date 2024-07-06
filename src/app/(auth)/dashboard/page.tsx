@@ -2,10 +2,9 @@
 import React from "react";
 
 import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { type Metadata } from "next";
 import Link from "next/link";
-
-import { Button } from "@/components";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -24,7 +23,7 @@ const Dashboard = () => {
       </Typography>
 
       <Link href="/dashboard/detail" className="no-underline">
-        <Button type="button">Start</Button>
+        <Button>Start</Button>
       </Link>
     </div>
   );

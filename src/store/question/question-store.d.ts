@@ -1,4 +1,5 @@
 interface QuestionSlice {
-  currentTab: number;
-  progress: number;
+  questionToggleTab: () => void;
+  questionProgress: number;
+  questionTab: number;
 }

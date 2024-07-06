@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import DescriptionIcon from "@mui/icons-material/Description";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import { Box } from "@mui/material";
 
 import { Tabs, Tab } from "@/components";
+import { useBoundStore } from "@/store";
 
 const Footer: React.FC = () => {
-  const [value, setValue] = useState<number>(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const { questionToggleTab, questionTab } = useBoundStore();
 
   return (
     <Box
@@ -26,16 +23,16 @@ const Footer: React.FC = () => {
     >
       <Box sx={{ bgcolor: "secondary.dark" }}>
         <Tabs
-          onChange={handleChange}
+          onChange={questionToggleTab}
           aria-label="styled tabs example"
           variant="fullWidth"
-          value={value}
+          value={questionTab}
           centered
         >
           <Tab
             icon={
               <DescriptionIcon
-                sx={{ color: value === 0 ? "primary.main" : "" }}
+                sx={{ color: questionTab === 0 ? "primary.main" : "" }}
               />
             }
             iconPosition="start"
@@ -44,7 +41,7 @@ const Footer: React.FC = () => {
           <Tab
             icon={
               <QuestionAnswerIcon
-                sx={{ color: value === 1 ? "primary.main" : "" }}
+                sx={{ color: questionTab === 1 ? "primary.main" : "" }}
               />
             }
             iconPosition="start"

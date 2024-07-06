@@ -1,8 +1,8 @@
 import { type StateCreator } from "zustand";
 
 const initialState = {
-  currentTab: 0,
-  progress: 0,
+  questionProgress: 0,
+  questionTab: 0,
 };
 
 export const createQuestionSlice: StateCreator<
@@ -13,7 +13,10 @@ export const createQuestionSlice: StateCreator<
 > = (set) => ({
   ...initialState,
   questionAddProgress: () => {
-    set((state) => ({ progress: state.progress + 1 }));
+    set((state) => ({ questionProgress: state.questionProgress + 1 }));
+  },
+  questionToggleTab: () => {
+    set((state) => ({ questionTab: state.questionTab === 0 ? 1 : 0 }));
   },
   questionReset: () => {
     set(initialState);

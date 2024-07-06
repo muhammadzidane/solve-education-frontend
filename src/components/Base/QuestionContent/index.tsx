@@ -1,55 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
-import { FontDownloadOutlined } from "@mui/icons-material";
-import { Typography, Container } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
-import DicreteSlider from "../DicreteSlider";
 import Paper from "../Paper";
 
 const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
-  const [contentFontSize, setContentFontSize] = useState<number>(16);
-
-  const onChangeSlider = (event: Event) => {
-    const target = event.target as HTMLInputElement;
-    const value = parseInt(target.value, 10);
-
-    switch (value) {
-      case 0:
-        setContentFontSize(14);
-        break;
-      case 1:
-        setContentFontSize(18);
-        break;
-      case 2:
-        setContentFontSize(22);
-        break;
-    }
-  };
-
   return (
-    <div>
-      <div className="bg-light-blue-1 h-[144px] pt-4">
-        <Container maxWidth="lg">
-          <div className="flex items-center gap-4">
-            <FontDownloadOutlined fontSize="small" />
-            <DicreteSlider
-              onChange={onChangeSlider}
-              color="secondary"
-              defaultValue={0}
-              step={1}
-              min={0}
-              max={2}
-            />
-            <FontDownloadOutlined />
-          </div>
-        </Container>
-      </div>
-      <Paper className="min-h-[100px]">
-        <Typography fontSize={contentFontSize}>{text}</Typography>
-      </Paper>
-    </div>
+    <Box flexDirection="column" display="flex" gap={2}>
+      <Box
+        sx={{
+          bgcolor: "secondary.light",
+          alignItems: "center",
+          display: "flex",
+          width: "100%",
+          height: 144,
+        }}
+      >
+        <Paper
+          sx={{
+            alignItems: "center",
+            minHeight: "100px",
+            display: "flex",
+            width: "100%",
+            mx: 6,
+          }}
+          borderPosition="left"
+        >
+          <Typography fontWeight={600}>{text}</Typography>
+        </Paper>
+      </Box>
+    </Box>
   );
 };
 

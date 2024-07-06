@@ -6,7 +6,6 @@ import { Inter } from "next/font/google";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { Toast } from "@/components";
 import MUIThemeProvider from "@/plugins/mui/provider";
 import NextAuthProvider from "@/plugins/next-auth/provider";
 import CustomSWRConfig from "@/plugins/swr";
@@ -30,7 +29,6 @@ export default function RootLayout({
           <AppRouterCacheProvider>
             <CustomSWRConfig>
               <NextAuthProvider>{children}</NextAuthProvider>
-              <Toast />
             </CustomSWRConfig>
             <CssBaseline />
           </AppRouterCacheProvider>
