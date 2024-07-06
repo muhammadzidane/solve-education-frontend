@@ -49,8 +49,8 @@ const TextTranslation: React.FC<TextTranslationProps> = ({
               minWidth: "fit-content",
               color: "#000000",
               fontWeight,
-              px: 0.35,
               fontSize,
+              px: 0.23,
               py: 0,
             }}
             aria-describedby={id}
