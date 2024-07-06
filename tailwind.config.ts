@@ -45,23 +45,6 @@ const config: Config = {
           },
         },
       },
-      colors: {
-        "light-blue-1": "#D0E0F9",
-        "purple-1": "#9B51E0",
-        "yellow-1": "#f8b76b",
-        "white-1": "#FFFFFF",
-        "white-2": "#EEEEEE",
-        "black-1": "#333333",
-        "black-2": "#4F4F4F",
-        secondary: "#03a9f4",
-        "gray-1": "#E0E0E0",
-        "gray-2": "#828282",
-        "gray-3": "#BDBDBD",
-        primary: "#FFD018",
-        warning: "#E5A443",
-        success: "#4CAF50",
-        danger: "#EB5757",
-      },
       animation: {
         "slide-in-bottom": "slide-in-bottom 250ms ease-out",
         "slide-in-right": "slide-in-right 250ms ease-out",
@@ -72,6 +55,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+      colors: {
+        secondary: "#03a9f4",
+        primary: "#FFD018",
+        warning: "#E5A443",
+        success: "#4CAF50",
+        danger: "#EB5757",
       },
       boxShadow: {
         bold: "rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;",

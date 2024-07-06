@@ -20,10 +20,10 @@ const BorderLinearProgress: React.FC<LinearProgressProps> = ({
           [`& .${linearProgressClasses.bar}`]: {
             borderRadius: 10,
           },
+          bgcolor: "background.paper",
           borderRadius: 10,
           height: 20,
         }}
-        className="!bg-white-2"
         variant="determinate"
         color="success"
         value={value}
