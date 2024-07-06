@@ -20,6 +20,7 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
     questionFontSize,
   } = useBoundStore();
 
+  // Handle channge slider
   const onChangeSlider = (event: Event) => {
     const target = event.target as HTMLInputElement;
     const value = parseInt(target.value, 10);

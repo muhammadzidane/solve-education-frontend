@@ -25,10 +25,12 @@ const TextTranslation: React.FC<TextTranslationProps> = ({
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
+  // Handle open
   const onOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
+  // Handle Clouse
   const onClose = () => {
     setAnchorEl(null);
   };

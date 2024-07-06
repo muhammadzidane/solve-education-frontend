@@ -36,10 +36,12 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
   const answerAlertTitle =
     answerAlertType === "success" ? "Exellent!" : "Learn from mistakes!";
 
+  // Handle answer button
   const onAnswer = (answer: string) => {
     const isCorrectAnswer = answer === currentData?.question_data?.answer;
     const answerType = isCorrectAnswer ? "success" : "error";
 
+    // Add score when the asnwer is correct
     if (isCorrectAnswer) {
       setQuestionScore();
     }
@@ -49,6 +51,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
     setshowAnswerAlert(true);
   };
 
+  // Handle continue button
   const onContinue = () => {
     if (questionProgress === 5) {
       router.push("/dashboard/result");
@@ -59,6 +62,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
   };
 
   useEffect(() => {
+    // Redirect when the the questions are completed
     if (questionProgress === 5 && !showAnswerAlert) {
       router.push("/dashboard/result");
     }

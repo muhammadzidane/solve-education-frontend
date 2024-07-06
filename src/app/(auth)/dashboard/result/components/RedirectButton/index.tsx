@@ -12,6 +12,7 @@ const RedirectButton: React.FC = () => {
   const router = useRouter();
   const { resetQuestion } = useBoundStore();
 
+  // Handle redirect to dasboard
   const onRedirectDashboard = () => {
     resetQuestion();
     router.push("/dashboard");

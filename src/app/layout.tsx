@@ -7,8 +7,6 @@ import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import MUIThemeProvider from "@/plugins/mui/provider";
-import NextAuthProvider from "@/plugins/next-auth/provider";
-import CustomSWRConfig from "@/plugins/swr";
 import "@/styles/globals.css";
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
@@ -27,9 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <MUIThemeProvider>
           <AppRouterCacheProvider>
-            <CustomSWRConfig>
-              <NextAuthProvider>{children}</NextAuthProvider>
-            </CustomSWRConfig>
+            {children}
             <CssBaseline />
           </AppRouterCacheProvider>
         </MUIThemeProvider>
