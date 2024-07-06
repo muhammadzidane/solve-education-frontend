@@ -2,10 +2,16 @@ import React from "react";
 
 import { ButtonProps, Typography, Button } from "@mui/material";
 
-const ButtonQuestion: React.FC<ButtonProps> = ({ children, ...rest }) => {
+const ButtonQuestion: React.FC<ButtonProps> = ({ children, sx, ...rest }) => {
   return (
     <Button
-      sx={{ justifyContent: "start", borderRadius: 2, height: 56 }}
+      sx={{
+        color: "background.paper",
+        justifyContent: "start",
+        borderRadius: 2,
+        height: 56,
+        ...sx,
+      }}
       variant="outlined"
       color="secondary"
       fullWidth

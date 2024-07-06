@@ -15,6 +15,7 @@ import Image from "next/image";
 import { TextTranslationProps } from "./text-translation";
 
 const TextTranslation: React.FC<TextTranslationProps> = ({
+  fontWeight,
   children,
   fontSize,
 }) => {
@@ -45,6 +46,7 @@ const TextTranslation: React.FC<TextTranslationProps> = ({
                   : "",
               minWidth: "fit-content",
               color: "#000000",
+              fontWeight,
               px: 0.35,
               fontSize,
               py: 0,
@@ -65,8 +67,8 @@ const TextTranslation: React.FC<TextTranslationProps> = ({
               sx={{
                 ":after": {
                   boxShadow: "-1px -1px 10px -2px rgba(0, 0, 0, 0.3)",
+                  background: "background.paper",
                   transform: "rotate(45deg)",
-                  background: "#FFFFFF",
                   position: "absolute",
                   height: "20px",
                   width: "20px",

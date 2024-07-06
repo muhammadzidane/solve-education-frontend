@@ -2,14 +2,15 @@
 
 import React from "react";
 
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 
 import Paper from "../Paper";
+import TextTranslation from "../TextTranslation";
 import { QuestionContentProps } from "./question-content";
 
 const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
   return (
-    <Box flexDirection="column" display="flex" gap={2}>
+    <div>
       <Box
         sx={{
           bgcolor: "secondary.light",
@@ -29,10 +30,10 @@ const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
           }}
           borderPosition="left"
         >
-          <Typography fontWeight={600}>{text}</Typography>
+          <TextTranslation fontWeight={600}>{text}</TextTranslation>
         </Paper>
       </Box>
-    </Box>
+    </div>
   );
 };
 

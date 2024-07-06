@@ -31,8 +31,8 @@ const DetailContent: React.FC = () => {
             <div>
               <ButtonQuestion
                 variant="contained"
-                className="!mb-24"
-                color="error"
+                sx={{ mb: "96px" }}
+                color="success"
               >
                 Bored
               </ButtonQuestion>

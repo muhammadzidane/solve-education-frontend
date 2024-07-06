@@ -35,6 +35,7 @@ const Footer: React.FC = () => {
                 sx={{ color: questionTab === 0 ? "primary.main" : "" }}
               />
             }
+            sx={{ fontSize: "14px" }}
             iconPosition="start"
             label="Passage"
           />
@@ -44,8 +45,9 @@ const Footer: React.FC = () => {
                 sx={{ color: questionTab === 1 ? "primary.main" : "" }}
               />
             }
+            sx={{ fontSize: "14px" }}
             iconPosition="start"
-            label="Question"
+            label="Questions"
           />
         </Tabs>
         <Box sx={{ p: 3 }} />

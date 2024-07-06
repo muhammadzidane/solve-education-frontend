@@ -9,7 +9,7 @@ const Tab = styled(({ ...rest }: TabProps) => (
     backgroundColor: "rgba(100, 95, 228, 0.32)",
   },
   "& .Mui-selected": {
-    color: "#FFFFFF",
+    color: "background.paper",
   },
   fontWeight: theme.typography.fontWeightBold,
   fontSize: theme.typography.pxToRem(15),
