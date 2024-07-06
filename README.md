@@ -29,6 +29,8 @@ bun dev
 ## Hosting Server
 
 ```bash
-http:blabla
+https://solve-education-frontend-muhammadzidanes-projects.vercel.app/
+# or
+https://solve-education-frontend.vercel.app/
 ```
 
