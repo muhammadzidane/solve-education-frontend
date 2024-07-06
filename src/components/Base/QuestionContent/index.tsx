@@ -5,6 +5,7 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 
 import Paper from "../Paper";
+import { QuestionContentProps } from "./question-content";
 
 const QuestionContent: React.FC<QuestionContentProps> = ({ text }) => {
   return (

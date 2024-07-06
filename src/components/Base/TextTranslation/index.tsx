@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
+import { TextTranslationProps } from "./text-translation";
+
 const TextTranslation: React.FC<TextTranslationProps> = ({
   children,
   fontSize,

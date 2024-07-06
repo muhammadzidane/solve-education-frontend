@@ -6,5 +6,6 @@ export { default as PassageContent } from "./PassageContent";
 export { default as ButtonQuestion } from "./ButtonQuestion";
 export { default as DicreteSlider } from "./DicreteSlider";
 export { default as Paper } from "./Paper";
+export { default as Modal } from "./Modal";
 export { default as Tabs } from "./Tabs";
 export { default as Tab } from "./Tab";

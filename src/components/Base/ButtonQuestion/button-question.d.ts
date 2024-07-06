@@ -1,1 +1,0 @@
-interface ButtonQuestionProps extends ButtonProps {}

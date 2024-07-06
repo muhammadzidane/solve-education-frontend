@@ -1,3 +1,3 @@
-interface QuestionContentProps {
+export interface QuestionContentProps {
   text: string;
 }

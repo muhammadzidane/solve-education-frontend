@@ -1,4 +1,4 @@
-interface QuestionCardAlertProps {
+export interface QuestionCardAlertProps {
   type: "success" | "error";
   title: string;
 }

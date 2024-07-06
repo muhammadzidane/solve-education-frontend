@@ -1,15 +1,20 @@
+"use client";
+
 import React from "react";
 
 import {
   InfoOutlined as InfoIcon,
   Close as CloseIcon,
 } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import Link from "next/link";
 
-import { BorderLinearProgress } from "@/components/Base";
+import { BorderLinearProgress, Modal } from "@/components";
+import { useToggle } from "@/hooks";
 
 const Navbar: React.FC = () => {
+  const { isToggle, onToggle } = useToggle();
+
   return (
     <div className="bg-primary px-6 h-16 shadow-bold mb-[0.025rem] flex items-center">
       <Link href="/dashboard">
@@ -17,10 +22,16 @@ const Navbar: React.FC = () => {
           <CloseIcon fontSize="large" />
         </IconButton>
       </Link>
+
       <BorderLinearProgress />
-      <IconButton className="ml-2">
+
+      <IconButton onClick={onToggle} className="ml-2">
         <InfoIcon />
       </IconButton>
+
+      <Modal onClose={onToggle} open={isToggle}>
+        <Typography>Tap to translate!</Typography>
+      </Modal>
     </div>
   );
 };

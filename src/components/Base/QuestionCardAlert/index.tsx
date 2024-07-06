@@ -3,6 +3,8 @@ import React from "react";
 import { Typography, Button, Card, Box } from "@mui/material";
 import Image from "next/image";
 
+import { QuestionCardAlertProps } from "./question-card-alert";
+
 const QuestionCardAlert: React.FC<QuestionCardAlertProps> = ({
   title,
   type,

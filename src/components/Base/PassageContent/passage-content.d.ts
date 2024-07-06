@@ -1,3 +1,3 @@
-interface PassageContentProps {
+export interface PassageContentProps {
   text: string;
 }

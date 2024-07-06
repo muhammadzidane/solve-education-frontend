@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 
 import { FontDownloadOutlined } from "@mui/icons-material";
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 
 import DicreteSlider from "../DicreteSlider";
 import Paper from "../Paper";
 import TextTranslation from "../TextTranslation";
+import { PassageContentProps } from "./passage-content";
 
 const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
   const [contentFontSize, setContentFontSize] = useState<number>(16);
@@ -31,9 +32,9 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
 
   return (
     <div>
-      <div className="bg-light-blue-1 h-[144px] pt-4">
+      <Box bgcolor="secondary.light" height="144px" pt="16px">
         <Container maxWidth="lg">
-          <div className="flex items-center gap-4">
+          <Box alignItems="center" display="flex" gap="16px">
             <FontDownloadOutlined fontSize="small" />
             <DicreteSlider
               onChange={onChangeSlider}
@@ -44,9 +45,9 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
               max={2}
             />
             <FontDownloadOutlined />
-          </div>
+          </Box>
         </Container>
-      </div>
+      </Box>
       <Paper
         sx={{
           position: "relative",
