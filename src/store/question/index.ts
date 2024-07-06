@@ -6,6 +6,7 @@ const initialState = {
   questionFontSlider: 0,
   questionFontSize: 14,
   questionProgress: 0,
+  questionScore: 0,
   questionTab: 0,
 };
 
@@ -19,11 +20,12 @@ export const createQuestionSlice: StateCreator<
   questionAddProgress: () => {
     set((state) => {
       const progressNumber = state.questionProgress + 1;
+      const score = progressNumber * 20;
 
-      return { questionProgress: progressNumber };
+      return { questionProgress: progressNumber, questionScore: score };
     });
   },
-  questionToggleTab: () => {
+  setQuestionTab: () => {
     set((state) => ({ questionTab: state.questionTab === 0 ? 1 : 0 }));
   },
   setQuestionFontSlider: (sliderValue) => {
@@ -31,6 +33,9 @@ export const createQuestionSlice: StateCreator<
   },
   setQuestionFontSize: (fontSize) => {
     set(() => ({ questionFontSize: fontSize }));
+  },
+  setQuestionScore: (score) => {
+    set(() => ({ questionScore: score }));
   },
   resetQuestion: () => {
     set(initialState);

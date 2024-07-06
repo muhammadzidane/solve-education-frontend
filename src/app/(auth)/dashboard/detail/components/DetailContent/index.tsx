@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Container, Stack, Box } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 import {
@@ -17,12 +17,8 @@ import { DetailContentProps } from "./detail-content";
 
 const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
   const router = useRouter();
-  const {
-    questionAddProgress,
-    questionToggleTab,
-    questionProgress,
-    questionTab,
-  } = useBoundStore();
+  const { questionAddProgress, questionProgress, setQuestionTab, questionTab } =
+    useBoundStore();
 
   const [showAnswerAlert, setshowAnswerAlert] = useState<boolean>(false);
   const [answerAlertType, setAnswerAlertType] = useState<"success" | "error">(
@@ -48,7 +44,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
     if (questionProgress === 5) {
       router.push("/dashboard/result");
     } else {
-      questionToggleTab();
+      setQuestionTab();
       setshowAnswerAlert(false);
     }
   };
@@ -57,9 +53,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
     <>
       {/* Passage Content */}
       {questionTab === 0 && (
-        <Box>
-          <PassageContent text={currentData?.question_data?.passage} />
-        </Box>
+        <PassageContent text={currentData?.question_data?.passage} />
       )}
 
       {/* Question Content */}

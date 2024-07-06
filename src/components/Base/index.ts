@@ -5,6 +5,7 @@ export { default as TextTranslation } from "./TextTranslation";
 export { default as PassageContent } from "./PassageContent";
 export { default as ButtonQuestion } from "./ButtonQuestion";
 export { default as DicreteSlider } from "./DicreteSlider";
+export { default as SingleTable } from "./SingleTable";
 export { default as Paper } from "./Paper";
 export { default as Modal } from "./Modal";
 export { default as Tabs } from "./Tabs";

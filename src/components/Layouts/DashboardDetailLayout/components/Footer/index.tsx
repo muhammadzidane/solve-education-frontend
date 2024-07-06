@@ -10,7 +10,7 @@ import { Tabs, Tab } from "@/components";
 import { useBoundStore } from "@/store";
 
 const Footer: React.FC = () => {
-  const { questionToggleTab, questionTab } = useBoundStore();
+  const { setQuestionTab, questionTab } = useBoundStore();
 
   return (
     <Box
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
     >
       <Box sx={{ bgcolor: "secondary.dark" }}>
         <Tabs
-          onChange={questionToggleTab}
+          onChange={setQuestionTab}
           aria-label="styled tabs example"
           variant="fullWidth"
           value={questionTab}

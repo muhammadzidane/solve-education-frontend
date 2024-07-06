@@ -7,8 +7,6 @@
 /* Custom CSS */
 @import url("./checkbox.css");
 @import url("./scrollbar.css");
-@import url("./toast.css");
-@import url("./dialog.css");
 
 .shadow-wow {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,

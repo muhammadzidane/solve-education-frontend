@@ -41,7 +41,7 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
             <FontDownloadOutlined fontSize="small" />
             <DicreteSlider
               onChange={onChangeSlider}
-              defaultValue={questionFontSlider}
+              value={questionFontSlider}
               color="secondary"
               step={1}
               min={0}
