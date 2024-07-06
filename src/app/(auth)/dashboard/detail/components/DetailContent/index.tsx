@@ -18,7 +18,7 @@ const DetailContent: React.FC = () => {
   return (
     <>
       {questionTab === 0 ? (
-        <PassageContent text="qowdkwoqkd" />
+        <PassageContent text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi provident assumenda fugit porro laboriosam iste repellat soluta, facere deleniti animi quaerat voluptatem explicabo distinctio quos officiis ipsa voluptate architecto culpa." />
       ) : (
         <>
           <QuestionContent text="Saha aing?" />

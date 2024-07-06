@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 
 import { FontDownloadOutlined } from "@mui/icons-material";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 
 import DicreteSlider from "../DicreteSlider";
 import Paper from "../Paper";
+import TextTranslation from "../TextTranslation";
 
 const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
   const [contentFontSize, setContentFontSize] = useState<number>(16);
@@ -46,8 +47,15 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
           </div>
         </Container>
       </div>
-      <Paper className="relative -top-16 mx-20 min-h-[100px]">
-        <Typography fontSize={contentFontSize}>{text}</Typography>
+      <Paper
+        sx={{
+          position: "relative",
+          minHeight: "100px",
+          top: "-64px",
+          mx: "80px",
+        }}
+      >
+        <TextTranslation fontSize={contentFontSize}>{text}</TextTranslation>
       </Paper>
     </div>
   );

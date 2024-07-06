@@ -1,10 +1,10 @@
 export { default as BorderLinearProgress } from "./BorderLinearProgress";
 export { default as QuestionCardAlert } from "./QuestionCardAlert";
 export { default as QuestionContent } from "./QuestionContent";
+export { default as TextTranslation } from "./TextTranslation";
 export { default as PassageContent } from "./PassageContent";
 export { default as ButtonQuestion } from "./ButtonQuestion";
 export { default as DicreteSlider } from "./DicreteSlider";
-export { default as DatePicker } from "./DatePicker";
 export { default as Paper } from "./Paper";
 export { default as Tabs } from "./Tabs";
 export { default as Tab } from "./Tab";

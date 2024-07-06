@@ -23,7 +23,9 @@ const Dashboard = () => {
       </Typography>
 
       <Link href="/dashboard/detail" className="no-underline">
-        <Button>Start</Button>
+        <Button variant="contained" color="info">
+          Start
+        </Button>
       </Link>
     </div>
   );
