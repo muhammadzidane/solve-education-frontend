@@ -11,6 +11,7 @@ import { PaperProps } from "./paper";
 const Paper = styled(({ ...rest }: PaperProps) => <PaperMUI {...rest} />)(
   ({ borderPosition = "top" }) => ({
     [`border${capitalizeFirstLetter(borderPosition)}`]: "3px solid #03A9F4",
+    borderRadius: "10px",
     padding: "6px 10px",
   })
 );

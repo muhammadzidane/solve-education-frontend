@@ -56,7 +56,8 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
           position: "relative",
           minHeight: "100px",
           top: "-64px",
-          mx: "80px",
+          width: "90%",
+          mx: "auto",
         }}
       >
         <TextTranslation fontSize={questionFontSize}>{text}</TextTranslation>

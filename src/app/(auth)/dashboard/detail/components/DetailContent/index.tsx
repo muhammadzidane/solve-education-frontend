@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Stack, Box } from "@mui/material";
+import { Container, Stack, Box } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 import {
@@ -64,9 +64,9 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
 
       {/* Question Content */}
       {questionTab === 1 && (
-        <Box>
+        <div>
           <QuestionContent text={currentData?.question_data?.question} />
-          <Box flex={1} px={24} pt={2}>
+          <Container sx={{ pt: 2 }} maxWidth="lg">
             {showAnswerAlert ? (
               <div>
                 <ButtonQuestion
@@ -98,8 +98,8 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
                 )}
               </Stack>
             )}
-          </Box>
-        </Box>
+          </Container>
+        </div>
       )}
     </>
   );
