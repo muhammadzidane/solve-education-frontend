@@ -3,6 +3,7 @@ import { type StateCreator } from "zustand";
 import { QuestionSlice } from "./question-store";
 
 const initialState = {
+  questionFontSlider: 0,
   questionFontSize: 14,
   questionProgress: 0,
   questionTab: 0,
@@ -17,19 +18,21 @@ export const createQuestionSlice: StateCreator<
   ...initialState,
   questionAddProgress: () => {
     set((state) => {
-      if (state.questionProgress === 100) {
-        return { questionProgress: initialState.questionProgress };
-      }
-      return { questionProgress: state.questionProgress + 20 };
+      const progressNumber = state.questionProgress + 1;
+
+      return { questionProgress: progressNumber };
     });
   },
   questionToggleTab: () => {
     set((state) => ({ questionTab: state.questionTab === 0 ? 1 : 0 }));
   },
-  questionChangeFontSize: (fontSize: number) => {
+  setQuestionFontSlider: (sliderValue) => {
+    set(() => ({ questionFontSlider: sliderValue }));
+  },
+  setQuestionFontSize: (fontSize) => {
     set(() => ({ questionFontSize: fontSize }));
   },
-  questionReset: () => {
+  resetQuestion: () => {
     set(initialState);
   },
 });

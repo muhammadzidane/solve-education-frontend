@@ -1,11 +1,15 @@
 import React from "react";
 
+import { questionData } from "@/constants";
+
 import { DetailContent } from "./components";
 
-const DashboardDetail = () => {
+const DashboardDetail = async () => {
+  const data = questionData;
+
   return (
     <>
-      <DetailContent />
+      <DetailContent data={data} />
     </>
   );
 };

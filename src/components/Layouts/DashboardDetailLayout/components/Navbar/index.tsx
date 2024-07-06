@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         </IconButton>
       </Link>
 
-      <BorderLinearProgress value={questionProgress} />
+      <BorderLinearProgress value={questionProgress * 20} />
 
       <IconButton onClick={onToggle} className="ml-2">
         <InfoIcon />

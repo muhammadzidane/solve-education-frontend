@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import { FontDownloadOutlined } from "@mui/icons-material";
 import { Container, Box } from "@mui/material";
+
+import { useBoundStore } from "@/store";
 
 import DicreteSlider from "../DicreteSlider";
 import Paper from "../Paper";
@@ -11,23 +13,24 @@ import TextTranslation from "../TextTranslation";
 import { PassageContentProps } from "./passage-content";
 
 const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
-  const [contentFontSize, setContentFontSize] = useState<number>(16);
+  const {
+    setQuestionFontSlider,
+    setQuestionFontSize,
+    questionFontSlider,
+    questionFontSize,
+  } = useBoundStore();
 
   const onChangeSlider = (event: Event) => {
     const target = event.target as HTMLInputElement;
     const value = parseInt(target.value, 10);
+    const fontSettings = [
+      { slider: 0, size: 14 },
+      { slider: 1, size: 18 },
+      { slider: 2, size: 22 },
+    ];
 
-    switch (value) {
-      case 0:
-        setContentFontSize(14);
-        break;
-      case 1:
-        setContentFontSize(18);
-        break;
-      case 2:
-        setContentFontSize(22);
-        break;
-    }
+    setQuestionFontSize(fontSettings[value].size);
+    setQuestionFontSlider(value);
   };
 
   return (
@@ -38,8 +41,8 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
             <FontDownloadOutlined fontSize="small" />
             <DicreteSlider
               onChange={onChangeSlider}
+              defaultValue={questionFontSlider}
               color="secondary"
-              defaultValue={0}
               step={1}
               min={0}
               max={2}
@@ -56,7 +59,7 @@ const PassageContent: React.FC<PassageContentProps> = ({ text }) => {
           mx: "80px",
         }}
       >
-        <TextTranslation fontSize={contentFontSize}>{text}</TextTranslation>
+        <TextTranslation fontSize={questionFontSize}>{text}</TextTranslation>
       </Paper>
     </div>
   );

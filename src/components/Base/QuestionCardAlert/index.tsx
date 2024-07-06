@@ -6,6 +6,7 @@ import Image from "next/image";
 import { QuestionCardAlertProps } from "./question-card-alert";
 
 const QuestionCardAlert: React.FC<QuestionCardAlertProps> = ({
+  onSubmit,
   title,
   type,
 }) => {
@@ -26,7 +27,12 @@ const QuestionCardAlert: React.FC<QuestionCardAlertProps> = ({
           </Typography>
         </Box>
         <Box justifyContent="center" display="flex">
-          <Button variant="contained" color="error" size="large">
+          <Button
+            onClick={onSubmit}
+            variant="contained"
+            color={type}
+            size="large"
+          >
             Continue
           </Button>
         </Box>
