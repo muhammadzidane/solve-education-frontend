@@ -2,6 +2,8 @@ import React from "react";
 
 import { Container, Box } from "@mui/material";
 
+import { ChildrenProps } from "@/types";
+
 const LayoutDashboardResult: React.FC<ChildrenProps> = ({ children }) => {
   return (
     <Container maxWidth="lg" sx={{ p: 8 }}>

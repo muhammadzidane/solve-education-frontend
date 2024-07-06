@@ -5,6 +5,7 @@ import React from "react";
 import { SWRConfig } from "swr";
 
 import { customFetch } from "@/helpers";
+import { ChildrenProps } from "@/types";
 
 const CustomSWRConfig: React.FC<ChildrenProps> = ({ children }) => {
   return (

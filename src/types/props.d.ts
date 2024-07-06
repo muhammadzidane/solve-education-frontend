@@ -1,7 +1,7 @@
-interface ChildrenProps {
+export interface ChildrenProps {
   children: React.ReactNode;
 }
 
-interface ParamPageProps {
+export interface ParamPageProps {
   searchParams: Record<string, undefined | string>;
 }
