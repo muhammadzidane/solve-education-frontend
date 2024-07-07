@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { CssBaseline } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Inter } from "next/font/google";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-import "react-datepicker/dist/react-datepicker.css";
 
 import MUIThemeProvider from "@/plugins/mui/provider";
 import "@/styles/globals.css";
