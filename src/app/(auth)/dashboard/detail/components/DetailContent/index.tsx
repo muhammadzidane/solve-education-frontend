@@ -26,6 +26,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
   } = useBoundStore();
 
   const [showAnswerAlert, setshowAnswerAlert] = useState<boolean>(false);
+  const [answer, setAnswer] = useState<string>("");
   const [answerAlertType, setAnswerAlertType] = useState<"success" | "error">(
     "success"
   );
@@ -46,6 +47,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
       setQuestionScore();
     }
 
+    setAnswer(answer);
     setQuestionProgress();
     setAnswerAlertType(answerType);
     setshowAnswerAlert(true);
@@ -87,7 +89,7 @@ const DetailContent: React.FC<DetailContentProps> = ({ data = [] }) => {
                   variant="contained"
                   sx={{ mb: "96px" }}
                 >
-                  {currentData?.question_data?.answer}
+                  {answer}
                 </ButtonQuestion>
                 <QuestionCardAlert
                   onSubmit={onContinue}

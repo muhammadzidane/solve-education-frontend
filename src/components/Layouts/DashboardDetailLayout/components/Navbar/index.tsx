@@ -6,7 +6,7 @@ import {
   InfoOutlined as InfoIcon,
   Close as CloseIcon,
 } from "@mui/icons-material";
-import { IconButton, Typography, Box } from "@mui/material";
+import { IconButton, Typography, Container, Box } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 import { BorderLinearProgress, Modal } from "@/components";
@@ -24,25 +24,21 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <Box
-      bgcolor="primary.main"
-      alignItems="center"
-      display="flex"
-      boxShadow={3}
-      height="64px"
-      mb="0.025rem"
-      px="24px"
-    >
-      <IconButton onClick={onRedirectDashboard} size="large">
-        <CloseIcon fontSize="large" />
-      </IconButton>
-      <BorderLinearProgress value={questionProgress * 20} />
-      <IconButton onClick={onToggle} sx={{ ml: "8px" }}>
-        <InfoIcon />
-      </IconButton>
-      <Modal onClose={onToggle} open={isToggle}>
-        <Typography>Tap to translate!</Typography>
-      </Modal>
+    <Box bgcolor="primary.main" boxShadow={3}>
+      <Container maxWidth="xl">
+        <Box alignItems="center" display="flex" height="64px">
+          <IconButton onClick={onRedirectDashboard} size="large">
+            <CloseIcon fontSize="large" />
+          </IconButton>
+          <BorderLinearProgress value={questionProgress * 20} />
+          <IconButton onClick={onToggle} sx={{ ml: "8px" }}>
+            <InfoIcon />
+          </IconButton>
+          <Modal onClose={onToggle} open={isToggle}>
+            <Typography>Tap to translate!</Typography>
+          </Modal>
+        </Box>
+      </Container>
     </Box>
   );
 };
